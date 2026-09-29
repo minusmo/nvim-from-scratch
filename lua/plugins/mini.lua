@@ -99,6 +99,10 @@ return {
       require("mini.icons").setup()
       require("mini.hipatterns").setup()
       require("mini.trailspace").setup()
+      require("mini.cursorword").setup()
+      require('mini.git').setup()
+      require('mini.tabline').setup()
+      require('mini.visits').setup()
 
       -- mini.files
       vim.keymap.set("n", "<leader>e", function()
