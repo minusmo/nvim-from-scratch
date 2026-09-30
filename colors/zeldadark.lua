@@ -32,6 +32,9 @@ local c = {
     twilight_bright = "#b197d8",
     danger = "#c35a52",
     danger_bright = "#e58a82",
+
+    ref_text = "#564c30",
+    ref_write = "#56302f",
 }
 
 local hl = function(group, opts)
@@ -188,10 +191,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.triforce })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.sheikah })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.forest })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.triforce_bright, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.danger })
+hl("LspSignatureActiveParameter", { fg = c.triforce_bright, bg = c.surface2, bold = true, underline = true, sp = c.triforce_bright })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.forest, bg = "#162119" })

@@ -39,6 +39,9 @@ local c = {
     purple = "#5c18b0",        -- vivid system purple (constant)
     purple_bright = "#7a38d0",
     silver_dark = "#5c6070",
+
+    ref_text = "#b2bdd1",
+    ref_write = "#ddc38f",
 }
 
 local hl = function(group, opts)
@@ -197,10 +200,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.amber })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.luna })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.taskbar })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.luna, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.amber })
+hl("LspSignatureActiveParameter", { fg = c.luna, bg = c.surface0, bold = true, underline = true, sp = c.luna })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.start, bg = "#cce8cc" })

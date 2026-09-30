@@ -35,6 +35,9 @@ local c = {
     psy_purple = "#b15cff",      -- psychic (type / constant)
     psy_bright = "#c989ff",
     clefairy_pink = "#ff6fae",   -- pink (special)
+
+    ref_text = "#5b4c1f",
+    ref_write = "#6a2324",
 }
 
 local hl = function(group, opts)
@@ -193,10 +196,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.electric })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.blast_blue })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.water_cyan })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.electric_bright, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.char_red })
+hl("LspSignatureActiveParameter", { fg = c.electric_bright, bg = c.surface2, bold = true, underline = true, sp = c.electric_bright })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.venu_green, bg = "#0e2010" })

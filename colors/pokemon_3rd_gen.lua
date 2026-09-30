@@ -37,6 +37,9 @@ local c = {
     violet = "#9b6cff",         -- Deoxys psychic (type / constant)
     violet_bright = "#b78fff",
     pearl = "#e6c84a",          -- gem shine (search / cursor / heading accent)
+
+    ref_text = "#555630",
+    ref_write = "#602535",
 }
 
 local hl = function(group, opts)
@@ -195,10 +198,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.pearl })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.sapphire })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.aqua })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.pearl, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.ruby })
+hl("LspSignatureActiveParameter", { fg = c.pearl, bg = c.surface2, bold = true, underline = true, sp = c.pearl })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.emerald, bg = "#0a2018" })

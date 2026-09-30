@@ -36,6 +36,9 @@ local c = {
     brass = "#c8a76a",         -- brass (operator / punctuation)
     mauve = "#b07a9e",         -- Ecruteak ghost mauve (constant)
     mauve_bright = "#c897b4",
+
+    ref_text = "#5d471a",
+    ref_write = "#5c3120",
 }
 
 local hl = function(group, opts)
@@ -194,10 +197,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.gold })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.crystal })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.crystal_bright })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.gold_bright, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.copper })
+hl("LspSignatureActiveParameter", { fg = c.gold_bright, bg = c.surface2, bold = true, underline = true, sp = c.gold_bright })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.moss, bg = "#1c2010" })

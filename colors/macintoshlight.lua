@@ -35,6 +35,9 @@ local c = {
     bright_blue = "#1038a0",
     bright_cyan = "#006688",
     bright_white = "#1a1614",
+
+    ref_text = "#b3b9d1",
+    ref_write = "#ddb793",
 }
 
 local hl = function(group, opts)
@@ -193,10 +196,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.mac_yellow })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.mac_blue })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.mac_cyan })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.mac_orange, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.mac_orange })
+hl("LspSignatureActiveParameter", { fg = c.mac_blue, bg = c.bg, bold = true, underline = true, sp = c.mac_blue })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.mac_green, bg = "#d4ecd6" })

@@ -37,6 +37,9 @@ local c = {
     flower_pink = "#d84f8f",   -- crayon pink (special)
     sunflower = "#f3c91e",     -- sunflower (highlight backgrounds)
     amber_deep = "#a86c12",    -- readable amber (warnings on light bg)
+
+    ref_text = "#f4e4aa",
+    ref_write = "#e8b2a9",
 }
 
 local hl = function(group, opts)
@@ -195,10 +198,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.tangerine })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.sky })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.teal })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { fg = c.grape_deep, bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.crayon_red })
+hl("LspSignatureActiveParameter", { fg = c.grape_deep, bg = c.ref_text, bold = true, underline = true, sp = c.grape_deep })
 
 -- Diff / Git
 hl("DiffAdd", { fg = c.yoshi_deep, bg = "#d9ecc6" })

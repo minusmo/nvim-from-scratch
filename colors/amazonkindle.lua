@@ -31,7 +31,10 @@ local c = {
     tan      = "#7A5A30", -- mid-light → special, label, dim
     sand     = "#9A7A50", -- light     → comment, conceal
 
-    comet_bg = "#F9EDD8"
+    comet_bg = "#F9EDD8",
+
+    ref_text = "#ccbba3",
+    ref_write = "#aaa091",
 }
 
 local hl = function(group, opts)
@@ -191,10 +194,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.umber })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.sienna })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.tan })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.ref_text })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.inkblack })
+hl("LspSignatureActiveParameter", { fg = c.inkblack, bg = c.ref_text, bold = true, underline = true, sp = c.inkblack })
 
 -- Diff / Git — shade bands only
 hl("DiffAdd", { fg = c.inkdark, bg = "#E8DFC8" })

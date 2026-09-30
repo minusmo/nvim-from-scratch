@@ -43,7 +43,10 @@ local c = {
     terracotta_dark = "#8B4538",
 
     muted_warm_amber = "#B8860B",
-    muted_warm_amber_dark = "#A67C1E"
+    muted_warm_amber_dark = "#A67C1E",
+
+    ref_text = "#d3dad4",
+    ref_write = "#e3d8d6",
 }
 
 local hl = function(group, opts)
@@ -203,10 +206,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.graphite })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.iron })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.smoke })
 
-hl("LspReferenceText", { bg = c.sage_green_light })
-hl("LspReferenceRead", { bg = c.sage_green })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { bold = true, underline = true })
+hl("LspReferenceText", { bg = c.ref_text })
+hl("LspReferenceRead", { bg = c.ref_text })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.terracotta })
+hl("LspSignatureActiveParameter", { fg = c.terracotta_dark, bg = c.ref_write, bold = true, underline = true, sp = c.terracotta_dark })
 
 -- Diff / Git — shade bands only
 hl("DiffAdd", { fg = c.charcoal, bg = "#e8e8e8" })

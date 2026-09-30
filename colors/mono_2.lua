@@ -31,7 +31,9 @@ local c = {
     smoke    = "#787878", -- mid-light → special, label, dim
     ash      = "#b0b0b0", -- light     → comment, conceal
 
-    comet_bg = "#f4f4f4"
+    comet_bg = "#f4f4f4",
+
+    ref_write = "#c4c4c4",
 }
 
 local hl = function(group, opts)
@@ -191,10 +193,10 @@ hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.graphite })
 hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.iron })
 hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.smoke })
 
-hl("LspReferenceText", { bg = c.surface0 })
+hl("LspReferenceText", { bg = c.surface2 })
 hl("LspReferenceRead", { bg = c.surface0 })
-hl("LspReferenceWrite", { bg = c.surface0, underline = true })
-hl("LspSignatureActiveParameter", { bold = true, underline = true })
+hl("LspReferenceWrite", { bg = c.ref_write, underline = true, sp = c.jet })
+hl("LspSignatureActiveParameter", { fg = c.jet, bg = c.surface2, bold = true, underline = true, sp = c.jet })
 
 -- Diff / Git — shade bands only
 hl("DiffAdd", { fg = c.charcoal, bg = "#e8e8e8" })
