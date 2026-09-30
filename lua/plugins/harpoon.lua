@@ -9,8 +9,8 @@ return {
     { "<leader>2", function() require("harpoon"):list():select(2) end, desc = "Harpoon file 2" },
     { "<leader>3", function() require("harpoon"):list():select(3) end, desc = "Harpoon file 3" },
     { "<leader>4", function() require("harpoon"):list():select(4) end, desc = "Harpoon file 4" },
-    { "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "Harpoon previous" },
-    { "<C-S-N>", function() require("harpoon"):list():next() end, desc = "Harpoon next" },
+    { "[h", function() require("harpoon"):list():prev() end, desc = "Harpoon previous" },
+    { "]h", function() require("harpoon"):list():next() end, desc = "Harpoon next" },
   },
   config = function()
     require("harpoon").setup()

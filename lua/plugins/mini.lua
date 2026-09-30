@@ -25,7 +25,7 @@ return {
 
       require("mini.splitjoin").setup({
         mappings = {
-          toggle = "gS",
+          toggle = "",
           split = "",
           join = "",
         },
@@ -78,14 +78,26 @@ return {
           { mode = "x", keys = "z" },
           { mode = "n", keys = "<C-w>" },
           { mode = "x", keys = "<C-w>" },
+          { mode = "n", keys = "[" },
+          { mode = "n", keys = "]" },
         },
         clues = {
+          { mode = "n", keys = "<Leader>f", desc = "+find" },
+          { mode = "n", keys = "<Leader>b", desc = "+buffer" },
+          { mode = "n", keys = "<Leader>w", desc = "+window" },
+          { mode = "n", keys = "<Leader>g", desc = "+git" },
+          { mode = "x", keys = "<Leader>g", desc = "+git" },
+          { mode = "n", keys = "<Leader>c", desc = "+code" },
+          { mode = "n", keys = "<Leader>r", desc = "+refactor" },
+          { mode = "x", keys = "<Leader>r", desc = "+refactor" },
+          { mode = "n", keys = "<Leader>x", desc = "+trouble" },
           require("mini.clue").gen_clues.builtin_completion(),
           require("mini.clue").gen_clues.g(),
           require("mini.clue").gen_clues.marks(),
           require("mini.clue").gen_clues.registers(),
           require("mini.clue").gen_clues.windows(),
           require("mini.clue").gen_clues.z(),
+          require("mini.clue").gen_clues.square_brackets(),
         },
         window = {
           delay = 300,
@@ -140,6 +152,18 @@ return {
       vim.keymap.set("n", "<leader>fh", function()
         MiniPick.builtin.help()
       end, { desc = "Find help" })
+
+      vim.keymap.set("n", "<leader>fr", function()
+        require("mini.extra").pickers.visit_paths()
+      end, { desc = "Recent files" })
+
+      vim.keymap.set("n", "<leader><leader>", function()
+        MiniPick.builtin.buffers()
+      end, { desc = "Buffers" })
+
+      vim.keymap.set("n", "<leader>/", function()
+        require("mini.extra").pickers.buf_lines({ scope = "current" })
+      end, { desc = "Search current buffer" })
 
       -- mini.bufremove
       vim.keymap.set("n", "<leader>bd", function()

@@ -1,8 +1,14 @@
 return {
 	"folke/zen-mode.nvim",
-	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+	cmd = "ZenMode",
+	opts = {},
+	keys = {
+		{
+			"<leader>z",
+			function()
+				require("zen-mode").toggle()
+			end,
+			desc = "Zen mode",
+		},
 	},
 }
