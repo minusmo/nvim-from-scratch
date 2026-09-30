@@ -52,6 +52,17 @@ return {
             border = "rounded",
           },
         },
+        mappings = {
+            choose = "<CR>",
+            choose_in_split = "<C-s>",
+            choose_in_vsplit = "<M-v>",
+            choose_in_tabpage = "<C-t>",
+            paste = "<C-v>",
+            move_down = "<C-n>",
+            move_up = "<C-p>",
+            toggle_preview = "<Tab>",
+            stop = "<Esc>",
+        }
       })
 
       require("mini.bufremove").setup()

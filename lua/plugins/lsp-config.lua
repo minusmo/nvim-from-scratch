@@ -62,3 +62,4 @@ return {
         vim.o.updatetime = 250
     end
 }
+
